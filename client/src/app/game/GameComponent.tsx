@@ -11,6 +11,7 @@ import { bagScene } from "./scenes/bagScene";
 import { battleScene } from "./scenes/battleScene";
 import { pokemonScene } from "./scenes/pokemonScene";
 import WorldScene from "./scenes/WorldScene";
+import { io } from "socket.io-client";
 
 const GameComponent = () => {
     const [game, setGame] = useState<PhaserGame>();
@@ -20,7 +21,6 @@ const GameComponent = () => {
             new PhaserGame({
                 parent: "game",
                 type: AUTO,
-                backgroundColor: '#b8e8d0', // The background color (blue)
                 width: 1280,
                 height: 720,
                 scale: {

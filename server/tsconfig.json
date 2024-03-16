@@ -1,0 +1,24 @@
+{
+  "display": "Server",
+  "compilerOptions": {
+    "target": "es6",
+    "noEmit": false,
+    "module": "commonjs",
+    "sourceMap": true,
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "rootDir": ".",
+    "outDir": "dist",
+  },
+  "include": [
+    "src/"
+  ],
+  "exclude": [
+    "node_modules",
+    ".turbo",
+    "coverage",
+    "dist",
+    "src/**/*.test.ts"
+  ]
+}

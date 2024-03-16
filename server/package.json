@@ -1,0 +1,43 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/src/index.js",
+    "dev": "tsc-watch --onSuccess \"nodemon src/index.ts\"",
+    "build": "tsc",
+    "vercel-build": "echo hello",
+    "test": "jest --coverage",
+    "lint": "eslint src --fix"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "files/*",
+      "contracts/*"
+    ],
+    "delay": 2500
+  },
+  "keywords": [],
+  "author": "Andrea Chello",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/express-session": "^1.17.10",
+    "@types/node": "^18.16.3",
+    "ts-node": "^10.9.1",
+    "tsc-watch": "^6.0.4",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ethers": "^5.7",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "prettier": "^2.6.2",
+    "socket.io": "^4.7.2",
+    "ws": "^8.13.0"
+  }
+}

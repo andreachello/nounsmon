@@ -33,7 +33,7 @@ export class pokemonScene extends Phaser.Scene {
 	summary_test: Phaser.GameObjects.Text;
 	cancel_test: Phaser.GameObjects.Text;
 	menuPointer: Phaser.GameObjects.Polygon;
-	
+
 	constructor() {
 		super("pokemonScene");
 	}
@@ -82,9 +82,9 @@ export class pokemonScene extends Phaser.Scene {
 		this.party_pokemon_list = [null, null, null, null, null, null];
 		// Each Pokemon's hp bar
 		this.party_pokemon_hp = [null, null, null, null, null, null];
-		var background = this.add.image(300, 300, 'background');
+		var background = this.add.image(620, 300, 'background').setScale(1.8);
 		// #endregion
-		
+
 		// Event listeners for mobile controls
 		this.events.addListener("Up", this.up, this);
 		this.events.addListener("Down", this.down, this);
@@ -96,66 +96,66 @@ export class pokemonScene extends Phaser.Scene {
 
 		if (this.numPokemon > 0) {
 			// 0th box
-			this.party_fill_list[0] = this.add.image(100, 200, 'party-0');
+			this.party_fill_list[0] = this.add.image(350 + 100, 200, 'party-0');
 			this.party_fill_list[0].setScale(2.0);
 			// Filled boxes
 			for (var i = 1; i < Math.min(this.numPokemon, 6); i++) {
-				this.party_fill_list[i] = this.add.image(400, (150 + (i - 1) * 60), 'party');
+				this.party_fill_list[i] = this.add.image(400 + 400, (150 + (i - 1) * 60), 'party');
 				this.party_fill_list[i].setScale(2.5);
 			}
 			// Empty boxes
 			for (var i = Math.min(this.numPokemon, 6); i < 6; i++) {
-				this.party_empty_list[i] = this.add.image(400, (150 + (i - 1) * 60), 'party-blank');
+				this.party_empty_list[i] = this.add.image(400 + 400, (150 + (i - 1) * 60), 'party-blank');
 				this.party_empty_list[i].setScale(2.5);
 			}
 		} else {
 			// 0th box
-			this.party_empty_list[0] = this.add.image(100, 200, 'party-0-blank');
+			this.party_empty_list[0] = this.add.image(350 + 100, 200, 'party-0-blank');
 			this.party_empty_list[0].setScale(2.0);
 			// Empty boxes
 			for (var i = 1; i < 6; i++) {
-				this.party_empty_list[i] = this.add.image(400, (150 + (i - 1) * 60), 'party-blank');
+				this.party_empty_list[i] = this.add.image(400 + 400, (150 + (i - 1) * 60), 'party-blank');
 				this.party_empty_list[i].setScale(2.5);
 			}
 		}
 
 		// Highlight list
-		this.party_highlight_list[0] = this.add.image(100, 200, 'party-0-highlighted');
+		this.party_highlight_list[0] = this.add.image(350 + 100, 200, 'party-0-highlighted');
 		this.party_highlight_list[0].setScale(2.0);
 		for (var i = 1; i < 6; i++) {
-			this.party_highlight_list[i] = this.add.image(400, 150 + ((i - 1) * 60), 'party-highlighted');
+			this.party_highlight_list[i] = this.add.image(400 + 400, 150 + ((i - 1) * 60), 'party-highlighted');
 			this.party_highlight_list[i].setScale(2.5);
 		}
 
 		// Pokemon list
 		if (this.numPokemon > 0) {
-			this.party_pokemon_list[0] = this.add.image(45, 175, "pokemon" + this.pokemons[0]["pokedex"]);
+			this.party_pokemon_list[0] = this.add.image(400 + 45, 175, "pokemon" + this.pokemons[0]["pokedex"]).setScale(0.1);
 			for (var i = 1; i < this.numPokemon; i++) {
-				this.party_pokemon_list[i] = this.add.image(250, 150 + ((i - 1) * 60), "pokemon" + this.pokemons[i]["pokedex"]);
+				this.party_pokemon_list[i] = this.add.image(400 + 250, 150 + ((i - 1) * 60), "pokemon" + this.pokemons[i]["pokedex"]).setScale(0.1);
 			}
 		}
 
 		// Pokemon names
-		this.add.text(70, 170, this.pokemons[0]["pokemon"], { color: '#ffffff', align: 'center' }).setFontSize('15px');
+		this.add.text(300 + 70, 170, this.pokemons[0]["pokemon"], { color: '#ffffff', align: 'center' }).setFontSize('15px');
 		for (var i = 1; i < this.numPokemon; i++) {
-			this.add.text(270, 140 + ((i - 1) * 60), this.pokemons[i]["pokemon"], { color: '#ffffff', align: 'center' }).setFontSize('15px');
+			this.add.text(300 + 270, 140 + ((i - 1) * 60), this.pokemons[i]["pokemon"], { color: '#ffffff', align: 'center' }).setFontSize('15px');
 		}
 
 		// Hp bar - displayWidth: 97 pixels (pokemon 0), 121 pixels (pokemon 1, 2, 3, 4, 5)
-		this.party_pokemon_hp[0] = this.add.image(70, 216, "hp-bar").setOrigin(0);
+		this.party_pokemon_hp[0] = this.add.image(400 + 70, 216, "hp-bar").setOrigin(0);
 		this.party_pokemon_hp[0].displayWidth = this.pokemons[0]["hp"] / this.pokemons[0]["maxHp"] * 97;
 
 		for (let i = 1; i < this.numPokemon; i++) {
-			this.party_pokemon_hp[i] = this.add.image(442, 141 + ((i - 1) * 60), "hp-bar").setOrigin(0);
+			this.party_pokemon_hp[i] = this.add.image(400 + 442, 141 + ((i - 1) * 60), "hp-bar").setOrigin(0);
 			this.party_pokemon_hp[i].displayWidth = this.pokemons[i]["hp"] / this.pokemons[i]["maxHp"] * 122;
 		}
 
 		// Cancel button
-		this.selected_cancel = this.add.image(530, 460, 'selected-cancel');
+		this.selected_cancel = this.add.image(400 + 530, 460, 'selected-cancel');
 		this.selected_cancel.setScale(2.5);
-		var pokeball = this.add.image(460, 455, 'pokeball');
+		var pokeball = this.add.image(400 + 460, 455, 'pokeball');
 		pokeball.setScale(3.0);
-		this.cancelText = this.add.text(492, 447, 'CANCEL').setFontSize('25px');
+		this.cancelText = this.add.text(400 + 492, 447, 'CANCEL').setFontSize('25px');
 
 		// #region Menu 2 interfaces
 		// Bottom left box
@@ -223,7 +223,7 @@ export class pokemonScene extends Phaser.Scene {
 	switchPokemon() {
 		this.switch_pokemon_index = parseInt(this.selectedMenu);
 		// Don't allow switching if this Pokemon is fainted
-		if(this.pokemons[this.switch_pokemon_index]["hp"] <= 0) {
+		if (this.pokemons[this.switch_pokemon_index]["hp"] <= 0) {
 			this.bottom_left_text.setText("The Pokemon is fainted");
 		} else {
 			this.game.scene.getScene("battleScene").isFromPokemonScene = true;

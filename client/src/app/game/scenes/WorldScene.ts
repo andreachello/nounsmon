@@ -29,6 +29,8 @@ import { useUserDataStore } from "../../../lib/stores/userData";
 import { useUIStore } from "../../../lib/stores/ui";
 import { moves } from "../../../lib/constants/moves";
 import { generateNounSvg } from "../../../lib/nouns";
+import { Socket, io } from "socket.io-client"
+import axios from "axios";
 
 export interface WorldReceivedData {
   facingDirection: Direction;
@@ -79,6 +81,8 @@ export default class WorldScene extends Scene {
   moves: {};
   numMoves: any;
   typeMoves: {};
+  socket: any;
+  otherPlayers: Phaser.Physics.Arcade.Group;
 
   constructor() {
     super("World");
@@ -205,6 +209,18 @@ export default class WorldScene extends Scene {
 
   create(): void {
 
+    const getCall = async () => {
+      const { data } = await axios.get("http://localhost:4090/api/call")
+      console.log("RES", data);
+
+    }
+
+    getCall()
+
+    const PORT = "4090"
+    const socket = io('http://localhost:4090')
+    this.socket = socket
+
     // Variables
     this.grassWidth = 16;
     this.grassHeight = 16
@@ -236,7 +252,7 @@ export default class WorldScene extends Scene {
 
     // const noun = generateNounSvg()
     // console.log("noun", noun);
-    
+
 
     // Max number of pokemon is 6. At least 1 pokemon.
     useUserDataStore.getState().initPokemon({
@@ -272,16 +288,20 @@ export default class WorldScene extends Scene {
         this.typeMoves[this.tempMoves[i]["type"]] = [this.tempMoves[i]];
       }
     }
+    this.initializePlayer();
+
+    this.initializeSockets()
 
 
     this.applyUserDataBeforeRender();
     this.initializeTilemap();
-    this.initializePlayer();
+
     this.initializeCamera();
     this.initializeGrid();
     this.initializeNPCs();
     this.listenKeyboardControl();
     this.applyUserDataAfterRender();
+
     this.gridEngine.positionChangeFinished().subscribe((observer) => {
       if (observer.charId === Sprites.PLAYER) {
         savePlayerPosition(this);
@@ -290,7 +310,98 @@ export default class WorldScene extends Scene {
     });
   }
 
+  // Method to update other players' positions in the game
+  updateOtherPlayerPosition(playerData: any) {
+    // Update the position of the corresponding player in the game
+  }
+
+  // Method to send player position updates to the server
+  sendPlayerPosition() {
+    // const { x, y } = this.player.position;
+    // this.socket.emit('playerPositionUpdate', { x, y });
+  }
+
+  initializeSockets() {
+
+
+    this.socket.on("connect", () => {
+      console.log("this.socket connected");
+
+    })
+
+    // Handle receiving other players' positions
+    this.socket.on('playerPositionUpdate', (playerData: any) => {
+      // Update the position of other players in the game
+      // playerData will contain information like player ID and position
+      this.updateOtherPlayerPosition(playerData);
+    });
+
+
+
+    this.socket.on('currentPlayers', (players: any) => {
+      Object.keys(players).forEach((id) => {
+        if (players[id].playerId === this.socket.id) {
+          console.log("Own player", players);
+          // addPlayer(self, players[id])
+        } else {
+          console.log("new player", players);
+          this.initializeOtherPlayer();
+
+          // addOtherPlayers(self, players[id])
+        }
+      })
+    })
+
+    this.socket.on('newPlayer', (playerInfo) => {
+      console.log("new player", playerInfo);
+      // addOtherPlayers(self, playerInfo)
+    })
+
+    this.otherPlayers = this.physics.add.group();
+
+    // this.socket.on("currentPlayers", function (players) {
+    //   Object.keys(players).forEach(function (id) {
+    //     if (players[id].playerId === self.socket.id) {
+    //       addPlayer(self, players[id]);
+    //     } else {
+    //       addOtherPlayers(self, players[id]);
+    //     }
+    //     console.log("inside add players");
+    //   });
+    // });
+
+    // this.socket.on("newPlayer", function (playerInfo) {
+    //   addOtherPlayers(self, playerInfo);
+    // });
+
+    // this.socket.on("disconnected", function (playerId) {
+    //   self.otherPlayers.getChildren().forEach(function (otherPlayer) {
+    //     if (playerId === otherPlayer.playerId) {
+    //       otherPlayer.destroy();
+    //     }
+    //   });
+    // });
+
+    // this.socket.on("playerMoved", function (playerInfo) {
+    //   self.otherPlayers.getChildren().forEach(function (otherPlayer) {
+    //     if (playerInfo.playerId === otherPlayer.playerId) {
+    //       otherPlayer.setRotation(playerInfo.rotation);
+    //       otherPlayer.setPosition(playerInfo.x, playerInfo.y);
+    //     }
+    //   });
+    // });
+
+    // this.cursors = this.input.keyboard.createCursorKeys();
+
+  }
+
   update(time): void {
+
+    if (!isMenuOpen()) {
+      // Example: Send player position updates every frame
+      this.sendPlayerPosition();
+    }
+
     if (isUIOpen()) {
       return;
     }
@@ -300,10 +411,6 @@ export default class WorldScene extends Scene {
     }
 
     this.listenMoves();
-
-    const pokemen = useUserDataStore.getState().pokemons
-    console.log("POKEMEN", pokemen);
-
   }
 
   initializeTilemap(): void {
@@ -364,6 +471,29 @@ export default class WorldScene extends Scene {
 
     this.currentSprite = onBicycle ? this.bicycle : this.player;
     this.speed = onBicycle ? 10 : 5;
+  }
+
+  initializeOtherPlayer() {
+    const onBicycle = useUserDataStore.getState().onBicycle;
+
+    this.player = this.add.sprite(0, 0, Sprites.PLAYER);
+    this.bicycle = this.add.sprite(0, 0, Sprites.BICYCLE);
+
+    [this.player, this.bicycle].forEach((sprite) => {
+      sprite.setOrigin(0.5, 0.5);
+      sprite.setDepth(1);
+    });
+
+    spawnNPCs(this)
+
+    // this.game.scene.gridEngine.addCharacter({
+    //   id: name,
+    //   sprite: Sprites.PLAYER,
+    //   walkingAnimationMapping: 0,
+    //   startPosition: { x, y },
+    //   speed: 5,
+    //   facingDirection,
+    // });
   }
 
   initializeGrid(): void {

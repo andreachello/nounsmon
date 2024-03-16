@@ -26,7 +26,7 @@ export class bagScene extends Phaser.Scene {
 	menuPointer2: Phaser.GameObjects.Polygon;
 	use_text: Phaser.GameObjects.Text;
 	cancel_text: Phaser.GameObjects.Text;
-	
+
 	constructor() {
 		super("bagScene");
 	}
@@ -43,7 +43,7 @@ export class bagScene extends Phaser.Scene {
 		this.isBagScene = true;
 		this.pokemons = data.pokemons;
 		this.isTyping = false;
-		
+
 		this.isUpPress = false;
 		this.isDownPress = false;
 		this.isLeftPress = false;
@@ -72,23 +72,23 @@ export class bagScene extends Phaser.Scene {
 		this.events.addListener("Enter", this.enter, this);
 
 		// Interfaces
-		var background = this.add.image(300, 300, 'bag-background').setScale(2.5);
-		this.menuPointer = this.add.polygon(290, 160, [0, 0, 0, 20, 10, 10], 0x636363);
-		this.item_0 = this.add.text(300, 145, 'POTION', { color: '#000000' }).setFontSize('30px');
-		this.item_1 = this.add.text(300, 185, 'POKe BALL', { color: '#000000' }).setFontSize('30px');
+		var background = this.add.image(650, 350, 'bag-background').setScale(4.5);
+		this.menuPointer = this.add.polygon(640, 100, [0, 0, 0, 20, 10, 10], 0x636363);
+		this.item_0 = this.add.text(670, 85, 'POTION', { color: '#000000' }).setFontSize('30px');
+		this.item_1 = this.add.text(670, 125, 'POKe BALL', { color: '#000000' }).setFontSize('30px');
 
 		// #region Menu option 2
 		// Menu bottom right chat bubbles
 		this.option2_menu = this.add.graphics();
 		this.option2_menu.fillStyle(0xdc5436, 1);
-		this.option2_menu.fillRoundedRect(400, 380, 190, 115, 20);
+		this.option2_menu.fillRoundedRect(950, 500, 190, 115, 20);
 		this.option2_menu.fillStyle(0x629ba0, 1);
-		this.option2_menu.fillRoundedRect(405, 385, 180, 105, 20);
+		this.option2_menu.fillRoundedRect(955, 505, 180, 105, 20);
 
 		// Menu bottom right text
-		this.menuPointer2 = this.add.polygon(420, 417, [0, 0, 0, 20, 10, 10], 0x636363);
-		this.use_text = this.add.text(430, 405, 'USE', { color: '#000000' }).setFontSize('30px');
-		this.cancel_text = this.add.text(430, 445, 'CANCEL', { color: '#000000' }).setFontSize('30px');
+		this.menuPointer2 = this.add.polygon(955, 545, [0, 0, 0, 20, 10, 10], 0x636363);
+		this.use_text = this.add.text(985, 515, 'USE', { color: '#000000' }).setFontSize('30px');
+		this.cancel_text = this.add.text(985, 555, 'CANCEL', { color: '#000000' }).setFontSize('30px');
 		this.setMenu2(false);
 		// #endregion
 
@@ -133,8 +133,8 @@ export class bagScene extends Phaser.Scene {
 		this.option2_menu.setVisible(flag);
 		if (flag) {
 			this.isOption2On = true;
-			this.menuPointer2.x = 420;
-			this.menuPointer2.y = 417;
+			this.menuPointer2.x = 970;
+			this.menuPointer2.y = 530;
 			this.selectedOption2 = 0;
 		} else {
 			this.isOption2On = false;
@@ -196,7 +196,7 @@ export class bagScene extends Phaser.Scene {
 							// Pokeball
 							case 1:
 								// TODO
-								if(this.isMainScene) {
+								if (this.isMainScene) {
 
 								} else {
 									this.game.scene.stop('bagScene');

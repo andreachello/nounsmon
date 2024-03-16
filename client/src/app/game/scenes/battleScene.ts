@@ -338,7 +338,7 @@ export class battleScene extends Phaser.Scene {
 							this.time.delayedCall(1000, function () {
 								this.pauseCursor = true;
 								this.game.scene.stop('battleScene');
-								this.game.scene.run('mainScene', this);
+								this.game.scene.run('World', this);
 							}, null, this);
 						});
 					},
@@ -689,7 +689,7 @@ export class battleScene extends Phaser.Scene {
 					this.opponent_pokemon_faint_text.start("");
 
 					this.game.scene.stop('battleScene');
-					this.game.scene.run('mainScene');
+					this.game.scene.run('World');
 				});
 				this.opponent_pokemon_faint_text.start(this.opponentPokemon["pokemon"] + " fainted!");
 				this.isAttacking = false;
@@ -824,7 +824,7 @@ export class battleScene extends Phaser.Scene {
 						break;
 					case 'Run':
 						this.game.scene.stop('battleScene');
-						this.game.scene.run('mainScene');
+						this.game.scene.run('World');
 						this.isYesPress = false;
 						break;
 					case 'Move 1':
