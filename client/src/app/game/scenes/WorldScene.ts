@@ -28,6 +28,7 @@ import {
 import { useUserDataStore } from "../../../lib/stores/userData";
 import { useUIStore } from "../../../lib/stores/ui";
 import { moves } from "../../../lib/constants/moves";
+import { generateNounSvg } from "../../../lib/nouns";
 
 export interface WorldReceivedData {
   facingDirection: Direction;
@@ -101,11 +102,11 @@ export default class WorldScene extends Scene {
     this.load.spritesheet('player', 'assets/player.png', { frameWidth: 32, frameHeight: 48 });
     // https://pkmn.net/?action=content&page=viewpage&id=8628&parentsection=87
     for (let i = 1; i < 152; i++) {
-      this.load.image('pokemon-back' + i, 'assets/pokemons/back/' + i.toString() + '.png');
+      this.load.image('pokemon-back' + i, 'assets/nouns/back/' + i.toString() + '.svg');
     }
     // https://pkmn.net/?action=content&page=viewpage&id=8594&parentsection=223
     for (let i = 1; i < 152; i++) {
-      this.load.image('pokemon' + i, 'assets/pokemons/front/' + i.toString() + '.png');
+      this.load.image('pokemon' + i, 'assets/nouns/front/' + i.toString() + '.svg');
     }
     this.load.json('movesData', 'data/moves.json');
     this.load.json('pokedexData', 'data/pokedex.json');
@@ -233,15 +234,26 @@ export default class WorldScene extends Scene {
     this.isNoPress = false;
     this.isEnterPress = false;
 
+    // const noun = generateNounSvg()
+    // console.log("noun", noun);
+    
+
     // Max number of pokemon is 6. At least 1 pokemon.
-    this.pokemons = [{
+    useUserDataStore.getState().initPokemon({
       pokemon: 'NOUN #123',
       moves: [['Growl', 2], ['Tackle', 13], ['Vine Whip', 10], ['Leech Seed', 3]],
       hp: 100,
       maxHp: 100,
       pokedex: 1
-    },
-    ];
+    })
+    // this.pokemons = [{
+    //   pokemon: 'NOUN #123',
+    //   moves: [['Growl', 2], ['Tackle', 13], ['Vine Whip', 10], ['Leech Seed', 3]],
+    //   hp: 100,
+    //   maxHp: 100,
+    //   pokedex: 1
+    // },
+    // ];
 
     // Convert move.json into a dictionary
     this.tempMoves = this.cache.json.get('movesData');
@@ -288,6 +300,10 @@ export default class WorldScene extends Scene {
     }
 
     this.listenMoves();
+
+    const pokemen = useUserDataStore.getState().pokemons
+    console.log("POKEMEN", pokemen);
+
   }
 
   initializeTilemap(): void {
@@ -336,8 +352,6 @@ export default class WorldScene extends Scene {
   }
 
   initializePlayer() {
-    console.log("Plugins", this.plugins);
-
     const onBicycle = useUserDataStore.getState().onBicycle;
 
     this.player = this.add.sprite(0, 0, Sprites.PLAYER);

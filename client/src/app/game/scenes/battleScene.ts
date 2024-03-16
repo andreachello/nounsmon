@@ -1,3 +1,5 @@
+import { useUserDataStore } from '../../../lib/stores/userData';
+import { pokemons } from './../../../../../src/constants/pokemons';
 import 'phaser';
 
 export class battleScene extends Phaser.Scene {
@@ -80,11 +82,11 @@ export class battleScene extends Phaser.Scene {
 
 	create(data) {
 		// Set the size of the game canvas to match the window size
-
+		const nouns = useUserDataStore.getState().pokemons
 		// Variables
 		this.pokedexData = data.pokedexData;
 		this.pokemon_rarity_cumulative = data.pokemon_rarity_cumulative;
-		this.pokemons = data.pokemons;
+		this.pokemons = nouns;
 		this.moves = data.moves;
 		this.currentPokemonIndex = -1;
 		this.menuInitialized = false;
@@ -211,7 +213,7 @@ export class battleScene extends Phaser.Scene {
 		this.typing.start('Wild ' + this.pokedexData[this.wild_pokemon_index]["name"]["english"] + ' appeared!');
 
 		// Wild Pokemon sprite
-		this.opponent_pokemon_sprite = this.add.image(900, 150, 'pokemon' + (this.wild_pokemon_index + 1).toString()).setScale(3.0);
+		this.opponent_pokemon_sprite = this.add.image(900, 150, 'pokemon' + (this.wild_pokemon_index + 1).toString()).setScale(0.5);
 
 		this.openingSequence();
 	}
@@ -390,7 +392,7 @@ export class battleScene extends Phaser.Scene {
 		this.pokeball.on("animationcomplete", function () {
 			// #region Summon own pokemon
 			// Pokemon to summon
-			this.ownPokemon = this.add.image(300, 400, 'pokemon-back' + this.pokemons[this.currentPokemonIndex]["pokedex"].toString()).setScale(3.0);
+			this.ownPokemon = this.add.image(300, 350, 'pokemon-back' + this.pokemons[this.currentPokemonIndex]["pokedex"].toString()).setScale(0.5);
 
 			this.pokeball.setVisible(false);
 			this.typing_4.start("");

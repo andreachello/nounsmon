@@ -38,6 +38,7 @@ export interface IUserDataStore {
   update: (state: Partial<IUserDataStore>) => void;
   addObjectToInventory: (objectId: number, currentMap: Maps) => void;
   addPokemon: (id: number) => void;
+  initPokemon: (mon: any) => void;
   hasCompletedScenario: (scenarioId: number) => boolean;
   completeScenario: (scenarioId: number) => void;
 }
@@ -63,12 +64,25 @@ export const useUserDataStore = create<IUserDataStore>()(
         },
         scenariosCompleted: [],
 
-        addPokemon: (id: number) => {
+        initPokemon: (noun: any) => {
           set((state) => ({
             ...state,
-            pokemons: [...state.pokemons, generatePokemon(id)],
+            pokemons: [noun],
           }));
         },
+
+        addPokemon: (noun: any) => {
+          set((state) => ({
+            ...state,
+            pokemons: [...state.pokemons, noun],
+          }));
+        },
+        // addPokemon: (id: number) => {
+        //   set((state) => ({
+        //     ...state,
+        //     pokemons: [...state.pokemons, generatePokemon(id)],
+        //   }));
+        // },
 
         addObjectToInventory: (objectId: number, currentMap: Maps) => {
           set((state) => ({

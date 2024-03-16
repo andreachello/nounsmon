@@ -21,8 +21,8 @@ const GameComponent = () => {
                 parent: "game",
                 type: AUTO,
                 backgroundColor: '#b8e8d0', // The background color (blue)
-                width: 1024,
-                height: 768,
+                width: 1280,
+                height: 720,
                 scale: {
                     mode: Scale.FIT,
                     autoCenter: Scale.CENTER_BOTH,
