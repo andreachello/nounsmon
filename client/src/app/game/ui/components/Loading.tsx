@@ -23,8 +23,8 @@ export const Loading = () => {
 
   return (
     <div className="loading">
-      <img src="assets/images/ui/logo.png" alt="logo" />
-      <div className="meter">
+      <img src="assets/images/ui/Slide 16_9 - 1.png" alt="logo" />
+      <div className="meter z-50">
         <span style={{ width: getPercentage(value) }}></span>i
       </div>
     </div>

@@ -32,11 +32,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.call = void 0;
+exports.getNounSVG = exports.catchNoun = exports.mintNoun = void 0;
 const callService = __importStar(require("./call.service"));
-const call = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const mintNoun = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const results = yield callService.call();
+        const results = yield callService.mintNoun();
         return res.status(200).send({ status: "OK", data: results });
     }
     catch (error) {
@@ -44,5 +44,29 @@ const call = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         return res.status(500).send("Internal Error");
     }
 });
-exports.call = call;
+exports.mintNoun = mintNoun;
+const catchNoun = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { address, nounId } = req.body;
+        const results = yield callService.catchNoun(nounId, address);
+        return res.status(200).send({ status: "OK", data: results });
+    }
+    catch (error) {
+        console.error(error); // Log the error for debugging purposes
+        return res.status(500).send("Internal Error");
+    }
+});
+exports.catchNoun = catchNoun;
+const getNounSVG = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { nounId } = req.params;
+        const results = yield callService.getNounSVG(nounId);
+        return res.status(200).send({ status: "OK", data: results });
+    }
+    catch (error) {
+        console.error(error); // Log the error for debugging purposes
+        return res.status(500).send("Internal Error");
+    }
+});
+exports.getNounSVG = getNounSVG;
 //# sourceMappingURL=call.controller.js.map

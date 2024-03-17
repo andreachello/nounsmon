@@ -25,7 +25,7 @@ const io = new Server(server, {
   cors: corsOptions
 });
 
-app.use('/api/call/', callRouter);
+app.use('/api/nouns/', callRouter);
 
 var players = {}
 

@@ -1,100 +1,22 @@
 import { AlchemyProvider } from "@ethersproject/providers";
 import { Wallet, ethers } from "ethers"
 
-
-
-// Seeder contract deployed at 0x100BB3fAdc375e4B7eDc1d501ab8e131d1a7A72C
-// Renderer contract deployed at 0xbbCd3972e8A9cc1e5D15aDB1f03f39E53b76D44c
-// Inflator contract deployed at 0x178540c31b397ca7c57811b14DFC0982f6bcA092
-// NFTDescriptorV2 deployed at 0x0B3Eb88A98BcC90Cc0441f78D5677f8a6572F1BE
-// Descriptor contract deployed at 0xB1138b0487AE97dD3352e87C5BbF8350aF9a9941
-// Art contract deployed at 0x266fC8249Bf484962E842C5fB1D4DB538177f1f8
-// Token contract deployed at 0xA7355007cCaee83105cd840c59dcB18c8d0EbB28
-
-const API_KEY = "PPtJQff9hWwYVUIMUaF_fleKO5rQByuA"
-const ETHERSCAN_API_KEY = "5389KT76DFYRFPSDXDJ3CP6FKHXED7AW49"
-
-export const call = async () => {
-  try {
-
-    // CONFIGURE PROVIDER & WALLET
-    // const signers = await ethers.getSigners();
-    // const firstSignerAddress: string = signers[0].address;
-    // const firstSignerAddress = ethers.utils.getAddress('0xD80C52d3dBeDE3941772AF7ADce2aAdDc00505AB');
-    // Connect to mainnet (homestead)
-    // const provider = new AlchemyProvider();
-
-    const provider = new ethers.providers.EtherscanProvider(ETHERSCAN_API_KEY);
-
-    // SETUP NOUNS TOKEN CONTRACT
-    var signer: any = ""
-
-
-    // const NounsToken = await ethers.getContractFactory('NounsToken');
-    // const nounsToken = await NounsToken.attach('0xA7355007cCaee83105cd840c59dcB18c8d0EbB28');
-
-    const nounsToken = new ethers.Contract(
-      '0xA7355007cCaee83105cd840c59dcB18c8d0EbB28',
-      NounsTokenABI,
-      signer
-    );
-
-    console.log("TOKEN CONTRACT", nounsToken);
-
-
-    // const txSigner = tokenContract.connect(signer);
-
-    // MINT NOUN (GOES TO CONTRACT OWNER)
-    const mintTxResponse = await nounsToken.mint();
-    console.log(mintTxResponse);
-    // const mintTxReceipt = await mintTxResponse.wait();
-    // console.log(mintTxReceipt);
-
-    // // NOUN CAUGHT (TRANSFER FROM CONTRACT OWNER TO RECIPIENT) function nounCaught(uint256 nounId, address _to) public onlyMinter
-    // const nounsCaughtTxResponse = await nounsToken.nounCaught(
-    //   0,
-    //   '0x9b3cAd3C29Db36797cbd03a236b701f904a308f9',
-    // );
-    // const nounsCaughtTxReceipt = await nounsCaughtTxResponse.wait();
-    // console.log(nounsCaughtTxReceipt);
-
-    // // GET NOUN SVG DATA
-    // const tokenURI = await nounsToken.tokenURI(0);
-    // console.log(tokenURI);
-
-    return "";
-  } catch (error) {
-    throw new Error(String(error))
-  }
-};
-
-
 const NounsTokenABI = [
   {
     "inputs": [
-      {
-        "internalType": "address",
-        "name": "_noundersDAO",
-        "type": "address"
-      },
       {
         "internalType": "address",
         "name": "_minter",
         "type": "address"
       },
       {
-        "internalType": "contract INounsDescriptor",
+        "internalType": "contract INounsDescriptorMinimal",
         "name": "_descriptor",
         "type": "address"
       },
       {
         "internalType": "contract INounsSeeder",
         "name": "_seeder",
-        "type": "address"
-      },
-      {
-        "internalType": "contract IProxyRegistry",
-        "name": "_proxyRegistry",
         "type": "address"
       }
     ],
@@ -212,7 +134,7 @@ const NounsTokenABI = [
     "inputs": [
       {
         "indexed": false,
-        "internalType": "contract INounsDescriptor",
+        "internalType": "contract INounsDescriptorMinimal",
         "name": "descriptor",
         "type": "address"
       }
@@ -599,7 +521,7 @@ const NounsTokenABI = [
     "name": "descriptor",
     "outputs": [
       {
-        "internalType": "contract INounsDescriptor",
+        "internalType": "contract INounsDescriptorMinimal",
         "name": "",
         "type": "address"
       }
@@ -812,16 +734,21 @@ const NounsTokenABI = [
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "noundersDAO",
-    "outputs": [
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "nounId",
+        "type": "uint256"
+      },
       {
         "internalType": "address",
-        "name": "",
+        "name": "_to",
         "type": "address"
       }
     ],
-    "stateMutability": "view",
+    "name": "nounCaught",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -868,19 +795,6 @@ const NounsTokenABI = [
     "outputs": [
       {
         "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "proxyRegistry",
-    "outputs": [
-      {
-        "internalType": "contract IProxyRegistry",
         "name": "",
         "type": "address"
       }
@@ -1032,7 +946,7 @@ const NounsTokenABI = [
   {
     "inputs": [
       {
-        "internalType": "contract INounsDescriptor",
+        "internalType": "contract INounsDescriptorMinimal",
         "name": "_descriptor",
         "type": "address"
       }
@@ -1051,19 +965,6 @@ const NounsTokenABI = [
       }
     ],
     "name": "setMinter",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_noundersDAO",
-        "type": "address"
-      }
-    ],
-    "name": "setNoundersDAO",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1244,3 +1145,79 @@ const NounsTokenABI = [
     "type": "function"
   }
 ]
+
+
+// Seeder contract deployed at 0x100BB3fAdc375e4B7eDc1d501ab8e131d1a7A72C
+// Renderer contract deployed at 0xbbCd3972e8A9cc1e5D15aDB1f03f39E53b76D44c
+// Inflator contract deployed at 0x178540c31b397ca7c57811b14DFC0982f6bcA092
+// NFTDescriptorV2 deployed at 0x0B3Eb88A98BcC90Cc0441f78D5677f8a6572F1BE
+// Descriptor contract deployed at 0xB1138b0487AE97dD3352e87C5BbF8350aF9a9941
+// Art contract deployed at 0x266fC8249Bf484962E842C5fB1D4DB538177f1f8
+// Token contract deployed at 0xA7355007cCaee83105cd840c59dcB18c8d0EbB28
+
+const API_URL = `https://eth-sepolia.g.alchemy.com/v2/${process.env.API_KEY}`
+
+const alchemyProvider = new ethers.providers.JsonRpcProvider(API_URL);
+
+// Signer
+const signer = new ethers.Wallet(process.env.PRIVATE_KEY, alchemyProvider);
+
+// SETUP NOUNS TOKEN CONTRACT
+
+const nounsToken = new ethers.Contract(
+  '0x43F443aeCAF4F9A975a1a206c4C0902Df3f536A8',
+  NounsTokenABI,
+  signer
+);
+
+
+export const mintNoun = async () => {
+  try {
+
+    // MINT NOUN (GOES TO CONTRACT OWNER)
+    const mintTxResponse = await nounsToken.mint();
+    const mintTxReceipt = await mintTxResponse.wait();
+    const events = mintTxReceipt.events
+    const nounCreatedEvent = events.find((event) => {
+      return event.event === "NounCreated"
+    })
+
+    const nounId = parseInt(nounCreatedEvent.args[0])
+    const nounTraits = nounCreatedEvent.args[1]
+
+    return { nounId, nounTraits };
+  } catch (error) {
+    throw new Error(String(error))
+  }
+};
+
+export const catchNoun = async (nounId: string, receiverAddress: string) => {
+  try {
+    console.log("raddress", JSON.stringify(receiverAddress));
+    
+    // // NOUN CAUGHT (TRANSFER FROM CONTRACT OWNER TO RECIPIENT) function nounCaught(uint256 nounId, address _to) public onlyMinter
+    const nounsCaughtTxResponse = await nounsToken.nounCaught(
+      nounId,
+      receiverAddress,
+    );
+    const nounsCaughtTxReceipt = await nounsCaughtTxResponse.wait();
+    console.log(nounsCaughtTxReceipt);
+
+    return nounsCaughtTxReceipt;
+  } catch (error) {
+    throw new Error(String(error))
+  }
+};
+
+export const getNounSVG = async (nounId: string) => {
+  try {
+    // // GET NOUN SVG DATA
+    const tokenURI = await nounsToken.tokenURI(nounId);
+    const tokenURISliced = tokenURI.slice(29,)
+    const image = JSON.parse(atob(tokenURISliced)).image
+
+    return { image };
+  } catch (error) {
+    throw new Error(String(error))
+  }
+};

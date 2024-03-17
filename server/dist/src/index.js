@@ -23,7 +23,7 @@ const server = http_1.default.createServer(app);
 const io = new socket_io_1.Server(server, {
     cors: corsOptions
 });
-app.use('/api/call/', call_router_1.default);
+app.use('/api/nouns/', call_router_1.default);
 var players = {};
 // io.on('connection', function (socket) {
 //   console.log('player [' + socket.id + '] connected')

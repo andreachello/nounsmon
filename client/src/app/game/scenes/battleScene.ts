@@ -1,6 +1,8 @@
+import axios from 'axios';
 import { useUserDataStore } from '../../../lib/stores/userData';
 import { pokemons } from './../../../../../src/constants/pokemons';
 import 'phaser';
+import { useAccount, useConnect, useDisconnect } from "wagmi";
 
 export class battleScene extends Phaser.Scene {
 	pokedexData: any;
@@ -72,6 +74,7 @@ export class battleScene extends Phaser.Scene {
 	move: any;
 	own_pokemon_battle_tween: Phaser.Tweens.Tween;
 	typing_3: any;
+	address: string;
 
 	constructor() {
 		super("battleScene");
@@ -83,6 +86,7 @@ export class battleScene extends Phaser.Scene {
 	create(data) {
 		// Set the size of the game canvas to match the window size
 		const nouns = useUserDataStore.getState().pokemons
+		this.address = useUserDataStore.getState().address || ""
 		// Variables
 		this.pokedexData = data.pokedexData;
 		this.pokemon_rarity_cumulative = data.pokemon_rarity_cumulative;
@@ -276,6 +280,22 @@ export class battleScene extends Phaser.Scene {
 	}
 
 	catchPokemon() {
+
+		console.log("address", this.address);
+		
+
+		const transferNoun = async () => {
+
+			const { data } = await axios.post("http://localhost:4090/api/nouns/catch", {
+				address: this.address,
+				nounId: 32
+			})
+			console.log("RES", data);
+
+		}
+
+		transferNoun()
+
 		this.setMenu(false);
 		// Pokeball animation
 		this.pokeball2 = this.physics.add.sprite(150, 400, 'pokeball_animation');

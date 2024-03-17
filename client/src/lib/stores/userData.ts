@@ -34,6 +34,7 @@ export interface IUserDataStore {
   pokemons: IPokemon[];
   settings: ISettings;
   scenariosCompleted: number[];
+  address: string;
 
   update: (state: Partial<IUserDataStore>) => void;
   addObjectToInventory: (objectId: number, currentMap: Maps) => void;
@@ -55,6 +56,7 @@ export const useUserDataStore = create<IUserDataStore>()(
         },
 
         onBicycle: Boolean(false),
+        address: "",
         inventory: [],
         pokemons: [],
         settings: {

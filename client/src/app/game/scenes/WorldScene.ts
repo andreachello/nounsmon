@@ -31,6 +31,7 @@ import { moves } from "../../../lib/constants/moves";
 import { generateNounSvg } from "../../../lib/nouns";
 import { Socket, io } from "socket.io-client"
 import axios from "axios";
+import { Svg } from "matter";
 
 export interface WorldReceivedData {
   facingDirection: Direction;
@@ -101,121 +102,43 @@ export default class WorldScene extends Scene {
   }
 
   preload() {
-    // Main scene assets
-    this.load.image("grass", "assets/FRLG_Grass.png");
-    this.load.spritesheet('player', 'assets/player.png', { frameWidth: 32, frameHeight: 48 });
-    // https://pkmn.net/?action=content&page=viewpage&id=8628&parentsection=87
-    for (let i = 1; i < 152; i++) {
-      this.load.image('pokemon-back' + i, 'assets/nouns/back/' + i.toString() + '.svg');
-    }
-    // https://pkmn.net/?action=content&page=viewpage&id=8594&parentsection=223
-    for (let i = 1; i < 152; i++) {
-      this.load.image('pokemon' + i, 'assets/nouns/front/' + i.toString() + '.svg');
-    }
-    this.load.json('movesData', 'data/moves.json');
-    this.load.json('pokedexData', 'data/pokedex.json');
-
-    // Pokemon scene assets
-    this.load.image('background', 'assets/pokemon-menu-background.png');
-    this.load.image('pokeball', 'assets/pokemon-menu-pokeball2.png');
-    this.load.image('selected-cancel', 'assets/selected-cancel.png');
-
-    this.load.image('party-0', 'assets/party-0.png');
-    this.load.image('party-0-highlighted', 'assets/party-0-highlighted.png');
-    this.load.image('party-0-blank', 'assets/party-0-blank.png');
-
-    this.load.image('party', 'assets/party.png');
-    this.load.image('party-highlighted', 'assets/party-highlighted.png');
-    this.load.image('party-blank', 'assets/party-blank.png');
-
-    this.load.image('hp-bar', 'assets/hp_bar.png');
-
-    // Battle scene assets
-    this.load.image('battle-background', 'assets/battle-background3.png');
-    this.load.image('battle-bar', 'assets/battle-bar.png');
-    this.load.image('opponent-battle-bar', 'assets/opponent-battle-bar.png');
-    this.load.spritesheet('pokeball_animation', 'assets/pokeball_animation.png', { frameWidth: 40, frameHeight: 40 });
-
-    // Bag scene assets
-    this.load.image('bag-background', 'assets/bag-background.png');
-
-    // #region Loading...
-    const loading_background = this.add.graphics();
-    const progressBar = this.add.graphics();
-    const progressBox = this.add.graphics();
-    progressBox.fillStyle(0x222222, 0.8);
-    progressBox.fillRect(140, 275, 320, 50);
-
-    const width = this.cameras.main.width;
-    const height = this.cameras.main.height;
-    const loadingText = this.make.text({
-      x: width / 2,
-      y: height / 2 - 50,
-      text: 'Loading...',
-      style: {
-        font: '20px monospace',
-        fill: '#ffffff'
-      } as any
-    });
-    loadingText.setOrigin(0.5, 0.5);
-
-    const percentText = this.make.text({
-      x: width / 2,
-      y: height / 2 - 5,
-      text: '0%',
-      style: {
-        font: '18px monospace',
-        fill: '#ffffff'
-      } as any
-    });
-    percentText.setOrigin(0.5, 0.5);
-
-    const assetText = this.make.text({
-      x: width / 2,
-      y: height / 2 + 50,
-      text: '',
-      style: {
-        font: '18px monospace',
-        fill: '#ffffff'
-      } as any
-    });
-
-    assetText.setOrigin(0.5, 0.5);
-
-    loading_background.fillStyle(0x000000, 1);
-    loading_background.fillRect(0, 0, 600, 600);
-
-    this.load.on('progress', function (value: number) {
-      percentText.setText(parseInt(String(value * 100)) + '%');
-      progressBar.clear();
-      progressBar.fillStyle(0xffffff, 1);
-      progressBar.fillRect(150, 285, 300 * value, 30);
-    });
-
-    this.load.on('fileprogress', function (file: { key: string; }) {
-      assetText.setText('Loading asset: ' + file.key);
-    });
-
-    this.load.on('complete', function () {
-      progressBar.destroy();
-      progressBox.destroy();
-      loadingText.destroy();
-      percentText.destroy();
-      assetText.destroy();
-      loading_background.destroy();
-    });
+ 
     // #endregion
   }
 
   create(): void {
 
-    const getCall = async () => {
-      const { data } = await axios.get("http://localhost:4090/api/call")
+    const spawnNoun = async () => {
+      const { data } = await axios.get("http://localhost:4090/api/nouns/mint")
       console.log("RES", data);
+
+      const { nounId, nounTrait } = data.data
+
+      const { data: nounSvgData } = await axios.get(`http://localhost:4090/api/nouns/svg/${nounId}`)
+
+      console.log('nounSvgData', nounSvgData);
+      
+      const { image } = nounSvgData.data
+
+      console.log("NOUNSVG", image);
+
+      useUserDataStore.getState().initPokemon({
+        pokemon: `Noun #${nounId}`,
+        moves: [['Growl', 2], ['Tackle', 13], ['Vine Whip', 10], ['Leech Seed', 3]],
+        hp: 100,
+        maxHp: 100,
+        pokedex: nounId,
+        sprite: image
+      })
+
+      return {
+        image,
+        nounId
+      }
 
     }
 
-    getCall()
+    spawnNoun()
 
     const PORT = "4090"
     const socket = io('http://localhost:4090')
@@ -254,14 +177,14 @@ export default class WorldScene extends Scene {
     // console.log("noun", noun);
 
 
-    // Max number of pokemon is 6. At least 1 pokemon.
-    useUserDataStore.getState().initPokemon({
-      pokemon: 'NOUN #123',
-      moves: [['Growl', 2], ['Tackle', 13], ['Vine Whip', 10], ['Leech Seed', 3]],
-      hp: 100,
-      maxHp: 100,
-      pokedex: 1
-    })
+    // // Max number of pokemon is 6. At least 1 pokemon.
+    // useUserDataStore.getState().initPokemon({
+    //   pokemon: 'NOUN #123',
+    //   moves: [['Growl', 2], ['Tackle', 13], ['Vine Whip', 10], ['Leech Seed', 3]],
+    //   hp: 100,
+    //   maxHp: 100,
+    //   pokedex: 1
+    // })
     // this.pokemons = [{
     //   pokemon: 'NOUN #123',
     //   moves: [['Growl', 2], ['Tackle', 13], ['Vine Whip', 10], ['Leech Seed', 3]],

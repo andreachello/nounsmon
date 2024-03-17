@@ -3,6 +3,8 @@ import * as callController from "./call.controller"
 
 const callRouter = express.Router()
 
-callRouter.get("/", callController.call);
+callRouter.get("/mint", callController.mintNoun);
+callRouter.post("/catch", callController.catchNoun);
+callRouter.get("/svg/:nounId", callController.getNounSVG);
 
 export default callRouter

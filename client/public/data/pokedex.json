@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": {
-      "english": "Nounmon #1"
+      "english": "Noun #1"
     },
     "type": [
       "Grass",
@@ -20,7 +20,7 @@
   {
     "id": 2,
     "name": {
-      "english": "Nounmon #2"
+      "english": "Noun #2"
     },
     "type": [
       "Grass",
@@ -38,7 +38,7 @@
   {
     "id": 3,
     "name": {
-      "english": "Nounmon #3"
+      "english": "Noun #3"
     },
     "type": [
       "Grass",
@@ -56,7 +56,7 @@
   {
     "id": 4,
     "name": {
-      "english": "Nounmon #4"
+      "english": "Noun #4"
     },
     "type": [
       "Fire"
@@ -73,7 +73,7 @@
   {
     "id": 5,
     "name": {
-      "english": "Nounmon #5",
+      "english": "Noun #5",
       "japanese": "リザード",
       "chinese": "火恐龙",
       "french": "Reptincel"
@@ -93,7 +93,7 @@
   {
     "id": 6,
     "name": {
-      "english": "Nounmon #6",
+      "english": "Noun #6",
       "japanese": "リザードン",
       "chinese": "喷火龙",
       "french": "Dracaufeu"
@@ -114,7 +114,7 @@
   {
     "id": 7,
     "name": {
-      "english": "Nounmon #7",
+      "english": "Noun #7",
       "japanese": "ゼニガメ",
       "chinese": "杰尼龟",
       "french": "Carapuce"
@@ -134,7 +134,7 @@
   {
     "id": 8,
     "name": {
-      "english": "Nounmon #8",
+      "english": "Noun #8",
       "japanese": "カメール",
       "chinese": "卡咪龟",
       "french": "Carabaffe"
@@ -154,7 +154,7 @@
   {
     "id": 9,
     "name": {
-      "english": "Nounmon #9",
+      "english": "Noun #9",
       "japanese": "カメックス",
       "chinese": "水箭龟",
       "french": "Tortank"
@@ -174,7 +174,7 @@
   {
     "id": 10,
     "name": {
-      "english": "Nounmon #10",
+      "english": "Noun #10",
       "japanese": "キャタピー",
       "chinese": "绿毛虫",
       "french": "Chenipan"
@@ -194,7 +194,7 @@
   {
     "id": 11,
     "name": {
-      "english": "Nounmon #11",
+      "english": "Noun #11",
       "japanese": "トランセル",
       "chinese": "铁甲蛹",
       "french": "Chrysacier"
@@ -214,7 +214,7 @@
   {
     "id": 12,
     "name": {
-      "english": "Nounmon #12",
+      "english": "Noun #12",
       "japanese": "バタフリー",
       "chinese": "巴大蝶",
       "french": "Papilusion"
@@ -235,7 +235,7 @@
   {
     "id": 13,
     "name": {
-      "english": "Nounmon #13",
+      "english": "Noun #13",
       "japanese": "ビードル",
       "chinese": "独角虫",
       "french": "Aspicot"
@@ -256,7 +256,7 @@
   {
     "id": 14,
     "name": {
-      "english": "Nounmon #15",
+      "english": "Noun #15",
       "japanese": "コクーン",
       "chinese": "铁壳蛹",
       "french": "Coconfort"
@@ -277,7 +277,7 @@
   {
     "id": 15,
     "name": {
-      "english": "Nounmon #16",
+      "english": "Noun #16",
       "japanese": "スピアー",
       "chinese": "大针蜂",
       "french": "Dardargnan"
@@ -298,7 +298,7 @@
   {
     "id": 16,
     "name": {
-      "english": "Nounmon #17",
+      "english": "Noun #17",
       "japanese": "ポッポ",
       "chinese": "波波",
       "french": "Roucool"
@@ -319,7 +319,7 @@
   {
     "id": 17,
     "name": {
-      "english": "Nounmon #18",
+      "english": "Noun #18",
       "japanese": "ピジョン",
       "chinese": "比比鸟",
       "french": "Roucoups"
@@ -340,7 +340,7 @@
   {
     "id": 18,
     "name": {
-      "english": "Nounmon #19",
+      "english": "Noun #19",
       "japanese": "ピジョット",
       "chinese": "大比鸟",
       "french": "Roucarnage"
@@ -361,7 +361,7 @@
   {
     "id": 19,
     "name": {
-      "english": "Nounmon #20",
+      "english": "Noun #20",
       "japanese": "コラッタ",
       "chinese": "小拉达",
       "french": "Rattata"
@@ -381,7 +381,7 @@
   {
     "id": 20,
     "name": {
-      "english": "Nounmon #21",
+      "english": "Noun #21",
       "japanese": "ラッタ",
       "chinese": "拉达",
       "french": "Rattatac"
@@ -401,7 +401,7 @@
   {
     "id": 21,
     "name": {
-      "english": "Nounmon #22",
+      "english": "Noun #22",
       "japanese": "オニスズメ",
       "chinese": "烈雀",
       "french": "Piafabec"
@@ -422,7 +422,7 @@
   {
     "id": 22,
     "name": {
-      "english": "Nounmon #23",
+      "english": "Noun #23",
       "japanese": "オニドリル",
       "chinese": "大嘴雀",
       "french": "Rapasdepic"
@@ -443,7 +443,7 @@
   {
     "id": 23,
     "name": {
-      "english": "Nounmon #24",
+      "english": "Noun #24",
       "japanese": "アーボ",
       "chinese": "阿柏蛇",
       "french": "Abo"
@@ -463,7 +463,7 @@
   {
     "id": 24,
     "name": {
-      "english": "Nounmon #25",
+      "english": "Noun #25",
       "japanese": "アーボック",
       "chinese": "阿柏怪",
       "french": "Arbok"
@@ -483,7 +483,7 @@
   {
     "id": 25,
     "name": {
-      "english": "Nounmon #26",
+      "english": "Noun #26",
       "japanese": "ピカチュウ",
       "chinese": "皮卡丘",
       "french": "Pikachu"
@@ -503,7 +503,7 @@
   {
     "id": 26,
     "name": {
-      "english": "Nounmon #27",
+      "english": "Noun #27",
       "japanese": "ライチュウ",
       "chinese": "雷丘",
       "french": "Raichu"
@@ -523,7 +523,7 @@
   {
     "id": 27,
     "name": {
-      "english": "Nounmon #28",
+      "english": "Noun #28",
       "japanese": "サンド",
       "chinese": "穿山鼠",
       "french": "Sabelette"
@@ -543,7 +543,7 @@
   {
     "id": 28,
     "name": {
-      "english": "Nounmon #29",
+      "english": "Noun #29",
       "japanese": "サンドパン",
       "chinese": "穿山王",
       "french": "Sablaireau"
@@ -563,7 +563,7 @@
   {
     "id": 29,
     "name": {
-      "english": "Nounmon #30",
+      "english": "Noun #30",
       "japanese": "ニドラン♀",
       "chinese": "尼多兰",
       "french": "Nidoran♀"
@@ -583,7 +583,7 @@
   {
     "id": 30,
     "name": {
-      "english": "Nounmon #31",
+      "english": "Noun #31",
       "japanese": "ニドリーナ",
       "chinese": "尼多娜",
       "french": "Nidorina"
@@ -603,7 +603,7 @@
   {
     "id": 31,
     "name": {
-      "english": "Nounmon #32",
+      "english": "Noun #32",
       "japanese": "ニドクイン",
       "chinese": "尼多后",
       "french": "Nidoqueen"
@@ -624,7 +624,7 @@
   {
     "id": 32,
     "name": {
-      "english": "Nounmon #33",
+      "english": "Noun #33",
       "japanese": "ニドラン♂",
       "chinese": "尼多朗",
       "french": "Nidoran♂"
@@ -644,7 +644,7 @@
   {
     "id": 33,
     "name": {
-      "english": "Nounmon #34",
+      "english": "Noun #34",
       "japanese": "ニドリーノ",
       "chinese": "尼多力诺",
       "french": "Nidorino"
@@ -664,7 +664,7 @@
   {
     "id": 34,
     "name": {
-      "english": "Nounmon #35",
+      "english": "Noun #35",
       "japanese": "ニドキング",
       "chinese": "尼多王",
       "french": "Nidoking"
@@ -685,7 +685,7 @@
   {
     "id": 35,
     "name": {
-      "english": "Nounmon #36",
+      "english": "Noun #36",
       "japanese": "ピッピ",
       "chinese": "皮皮",
       "french": "Mélofée"
@@ -705,7 +705,7 @@
   {
     "id": 36,
     "name": {
-      "english": "Nounmon #37",
+      "english": "Noun #37",
       "japanese": "ピクシー",
       "chinese": "皮可西",
       "french": "Mélodelfe"
@@ -725,7 +725,7 @@
   {
     "id": 37,
     "name": {
-      "english": "Nounmon #38",
+      "english": "Noun #38",
       "japanese": "ロコン",
       "chinese": "六尾",
       "french": "Goupix"
@@ -745,7 +745,7 @@
   {
     "id": 38,
     "name": {
-      "english": "Nounmon #39",
+      "english": "Noun #39",
       "japanese": "キュウコン",
       "chinese": "九尾",
       "french": "Feunard"
@@ -765,7 +765,7 @@
   {
     "id": 39,
     "name": {
-      "english": "Nounmon #40",
+      "english": "Noun #40",
       "japanese": "プリン",
       "chinese": "胖丁",
       "french": "Rondoudou"
@@ -786,7 +786,7 @@
   {
     "id": 40,
     "name": {
-      "english": "Nounmon #41",
+      "english": "Noun #41",
       "japanese": "プクリン",
       "chinese": "胖可丁",
       "french": "Grodoudou"
@@ -807,7 +807,7 @@
   {
     "id": 41,
     "name": {
-      "english": "Nounmon #42",
+      "english": "Noun #42",
       "japanese": "ズバット",
       "chinese": "超音蝠",
       "french": "Nosferapti"
@@ -828,7 +828,7 @@
   {
     "id": 42,
     "name": {
-      "english": "Nounmon #43",
+      "english": "Noun #43",
       "japanese": "ゴルバット",
       "chinese": "大嘴蝠",
       "french": "Nosferalto"
@@ -849,7 +849,7 @@
   {
     "id": 43,
     "name": {
-      "english": "Nounmon #44",
+      "english": "Noun #44",
       "japanese": "ナゾノクサ",
       "chinese": "走路草",
       "french": "Mystherbe"
@@ -870,7 +870,7 @@
   {
     "id": 44,
     "name": {
-      "english": "Nounmon #45",
+      "english": "Noun #45",
       "japanese": "クサイハナ",
       "chinese": "臭臭花",
       "french": "Ortide"
@@ -891,7 +891,7 @@
   {
     "id": 45,
     "name": {
-      "english": "Nounmon #46",
+      "english": "Noun #46",
       "japanese": "ラフレシア",
       "chinese": "霸王花",
       "french": "Rafflesia"
@@ -912,7 +912,7 @@
   {
     "id": 46,
     "name": {
-      "english": "Nounmon #47",
+      "english": "Noun #47",
       "japanese": "パラス",
       "chinese": "派拉斯",
       "french": "Paras"
@@ -933,7 +933,7 @@
   {
     "id": 47,
     "name": {
-      "english": "Nounmon #48",
+      "english": "Noun #48",
       "japanese": "パラセクト",
       "chinese": "派拉斯特",
       "french": "Parasect"
@@ -954,7 +954,7 @@
   {
     "id": 48,
     "name": {
-      "english": "Nounmon #49",
+      "english": "Noun #49",
       "japanese": "コンパン",
       "chinese": "毛球",
       "french": "Mimitoss"
@@ -975,7 +975,7 @@
   {
     "id": 49,
     "name": {
-      "english": "Nounmon #50",
+      "english": "Noun #50",
       "japanese": "モルフォン",
       "chinese": "摩鲁蛾",
       "french": "Aéromite"
@@ -1017,7 +1017,7 @@
   {
     "id": 50,
     "name": {
-      "english": "Nounmon #51",
+      "english": "Noun #51",
       "japanese": "キャタピー",
       "chinese": "绿毛虫",
       "french": "Chenipan"
@@ -1037,7 +1037,7 @@
   {
     "id": 51,
     "name": {
-      "english": "Nounmon #52",
+      "english": "Noun #52",
       "japanese": "トランセル",
       "chinese": "铁甲蛹",
       "french": "Chrysacier"
@@ -1057,7 +1057,7 @@
   {
     "id": 52,
     "name": {
-      "english": "Nounmon #53",
+      "english": "Noun #53",
       "japanese": "バタフリー",
       "chinese": "巴大蝶",
       "french": "Papilusion"
@@ -1078,7 +1078,7 @@
   {
     "id": 53,
     "name": {
-      "english": "Nounmon #54",
+      "english": "Noun #54",
       "japanese": "ビードル",
       "chinese": "独角虫",
       "french": "Aspicot"
@@ -1099,7 +1099,7 @@
   {
     "id": 54,
     "name": {
-      "english": "Nounmon #55",
+      "english": "Noun #55",
       "japanese": "コクーン",
       "chinese": "铁壳蛹",
       "french": "Coconfort"
@@ -1120,7 +1120,7 @@
   {
     "id": 55,
     "name": {
-      "english": "Nounmon #56",
+      "english": "Noun #56",
       "japanese": "スピアー",
       "chinese": "大针蜂",
       "french": "Dardargnan"
@@ -1141,7 +1141,7 @@
   {
     "id": 56,
     "name": {
-      "english": "Nounmon #57",
+      "english": "Noun #57",
       "japanese": "ポッポ",
       "chinese": "波波",
       "french": "Roucool"
@@ -1162,7 +1162,7 @@
   {
     "id": 57,
     "name": {
-      "english": "Nounmon #58",
+      "english": "Noun #58",
       "japanese": "ピジョン",
       "chinese": "比比鸟",
       "french": "Roucoups"
@@ -1183,7 +1183,7 @@
   {
     "id": 58,
     "name": {
-      "english": "Nounmon #59",
+      "english": "Noun #59",
       "japanese": "ピジョット",
       "chinese": "大比鸟",
       "french": "Roucarnage"
@@ -1204,7 +1204,7 @@
   {
     "id": 59,
     "name": {
-      "english": "Nounmon #60",
+      "english": "Noun #60",
       "japanese": "コラッタ",
       "chinese": "小拉达",
       "french": "Rattata"
@@ -1224,7 +1224,7 @@
   {
     "id": 60,
     "name": {
-      "english": "Nounmon #61",
+      "english": "Noun #61",
       "japanese": "ラッタ",
       "chinese": "拉达",
       "french": "Rattatac"
@@ -1244,7 +1244,7 @@
   {
     "id": 61,
     "name": {
-      "english": "Nounmon #62",
+      "english": "Noun #62",
       "japanese": "オニスズメ",
       "chinese": "烈雀",
       "french": "Piafabec"
@@ -1265,7 +1265,7 @@
   {
     "id": 62,
     "name": {
-      "english": "Nounmon #63",
+      "english": "Noun #63",
       "japanese": "オニドリル",
       "chinese": "大嘴雀",
       "french": "Rapasdepic"
@@ -1286,7 +1286,7 @@
   {
     "id": 63,
     "name": {
-      "english": "Nounmon #64"
+      "english": "Noun #64"
     },
     "type": [
       "Poison"
@@ -1303,7 +1303,7 @@
   {
     "id": 64,
     "name": {
-      "english": "Nounmon #65"
+      "english": "Noun #65"
     },
     "type": [
       "Poison"
@@ -1320,7 +1320,7 @@
   {
     "id": 65,
     "name": {
-      "english": "Nounmon #66"
+      "english": "Noun #66"
     },
     "type": [
       "Electric"
@@ -1337,7 +1337,7 @@
   {
     "id": 66,
     "name": {
-      "english": "Nounmon #67"
+      "english": "Noun #67"
     },
     "type": [
       "Electric"
@@ -1354,7 +1354,7 @@
   {
     "id": 67,
     "name": {
-      "english": "Nounmon #68"
+      "english": "Noun #68"
     },
     "type": [
       "Ground"
@@ -1371,7 +1371,7 @@
   {
     "id": 68,
     "name": {
-      "english": "Nounmon #69"
+      "english": "Noun #69"
     },
     "type": [
       "Ground"
@@ -1388,7 +1388,7 @@
   {
     "id": 70,
     "name": {
-      "english": "Nounmon #70"
+      "english": "Noun #70"
     },
     "type": [
       "Grass",
@@ -1406,7 +1406,7 @@
   {
     "id": 71,
     "name": {
-      "english": "Nounmon #71"
+      "english": "Noun #71"
     },
     "type": [
       "Grass",
@@ -1424,7 +1424,7 @@
   {
     "id": 72,
     "name": {
-      "english": "Nounmon #72"
+      "english": "Noun #72"
     },
     "type": [
       "Water",
@@ -1442,7 +1442,7 @@
   {
     "id": 73,
     "name": {
-      "english": "Nounmon #73"
+      "english": "Noun #73"
     },
     "type": [
       "Water",
@@ -1460,7 +1460,7 @@
   {
     "id": 74,
     "name": {
-      "english": "Nounmon #74"
+      "english": "Noun #74"
     },
     "type": [
       "Rock",
@@ -1478,7 +1478,7 @@
   {
     "id": 75,
     "name": {
-      "english": "Nounmon #75"
+      "english": "Noun #75"
     },
     "type": [
       "Rock",
@@ -1496,7 +1496,7 @@
   {
     "id": 76,
     "name": {
-      "english": "Nounmon #76"
+      "english": "Noun #76"
     },
     "type": [
       "Rock",
@@ -1514,7 +1514,7 @@
   {
     "id": 77,
     "name": {
-      "english": "Nounmon #77"
+      "english": "Noun #77"
     },
     "type": [
       "Fire"
@@ -1531,7 +1531,7 @@
   {
     "id": 78,
     "name": {
-      "english": "Nounmon #78"
+      "english": "Noun #78"
     },
     "type": [
       "Fire"
@@ -1548,7 +1548,7 @@
   {
     "id": 79,
     "name": {
-      "english": "Nounmon #79"
+      "english": "Noun #79"
     },
     "type": [
       "Water",
@@ -1566,7 +1566,7 @@
   {
     "id": 80,
     "name": {
-      "english": "Nounmon #80"
+      "english": "Noun #80"
     },
     "type": [
       "Water",
@@ -1584,7 +1584,7 @@
   {
     "id": 81,
     "name": {
-      "english": "Nounmon #81"
+      "english": "Noun #81"
     },
     "type": [
       "Electric",
@@ -1602,7 +1602,7 @@
   {
     "id": 82,
     "name": {
-      "english": "Nounmon #82"
+      "english": "Noun #82"
     },
     "type": [
       "Electric",
@@ -1620,7 +1620,7 @@
   {
     "id": 83,
     "name": {
-      "english": "Nounmon #83"
+      "english": "Noun #83"
     },
     "type": [
       "Normal",
@@ -1638,7 +1638,7 @@
   {
     "id": 84,
     "name": {
-      "english": "Nounmon #84"
+      "english": "Noun #84"
     },
     "type": [
       "Normal",
@@ -1656,7 +1656,7 @@
   {
     "id": 85,
     "name": {
-      "english": "Nounmon #85"
+      "english": "Noun #85"
     },
     "type": [
       "Normal",
@@ -1674,7 +1674,7 @@
   {
     "id": 86,
     "name": {
-      "english": "Nounmon #86"
+      "english": "Noun #86"
     },
     "type": [
       "Water"
@@ -1691,7 +1691,7 @@
   {
     "id": 87,
     "name": {
-      "english": "Nounmon #87"
+      "english": "Noun #87"
     },
     "type": [
       "Water",
@@ -1709,7 +1709,7 @@
   {
     "id": 88,
     "name": {
-      "english": "Nounmon #88"
+      "english": "Noun #88"
     },
     "type": [
       "Poison"
@@ -1726,7 +1726,7 @@
   {
     "id": 89,
     "name": {
-      "english": "Nounmon #89"
+      "english": "Noun #89"
     },
     "type": [
       "Poison"
@@ -1743,7 +1743,7 @@
   {
     "id": 90,
     "name": {
-      "english": "Nounmon #90"
+      "english": "Noun #90"
     },
     "type": [
       "Water"
@@ -1760,7 +1760,7 @@
   {
     "id": 91,
     "name": {
-      "english": "Nounmon #91"
+      "english": "Noun #91"
     },
     "type": [
       "Water",
@@ -1778,7 +1778,7 @@
   {
     "id": 92,
     "name": {
-      "english": "Nounmon #92"
+      "english": "Noun #92"
     },
     "type": [
       "Ghost",
@@ -1796,7 +1796,7 @@
   {
     "id": 93,
     "name": {
-      "english": "Nounmon #93"
+      "english": "Noun #93"
     },
     "type": [
       "Ghost",
@@ -1814,7 +1814,7 @@
   {
     "id": 94,
     "name": {
-      "english": "Nounmon #94"
+      "english": "Noun #94"
     },
     "type": [
       "Ghost",
@@ -1832,7 +1832,7 @@
   {
     "id": 95,
     "name": {
-      "english": "Nounmon #95"
+      "english": "Noun #95"
     },
     "type": [
       "Rock",
@@ -1850,7 +1850,7 @@
   {
     "id": 96,
     "name": {
-      "english": "Nounmon #96"
+      "english": "Noun #96"
     },
     "type": [
       "Psychic"
@@ -1867,7 +1867,7 @@
   {
     "id": 97,
     "name": {
-      "english": "Nounmon #97"
+      "english": "Noun #97"
     },
     "type": [
       "Psychic"
@@ -1884,7 +1884,7 @@
   {
     "id": 98,
     "name": {
-      "english": "Nounmon #98"
+      "english": "Noun #98"
     },
     "type": [
       "Water"
@@ -1901,7 +1901,7 @@
   {
     "id": 99,
     "name": {
-      "english": "Nounmon #99"
+      "english": "Noun #99"
     },
     "type": [
       "Water"
@@ -1918,7 +1918,7 @@
   {
     "id": 100,
     "name": {
-      "english": "Nounmon #100"
+      "english": "Noun #100"
     },
     "type": [
       "Electric"
@@ -1935,7 +1935,7 @@
   {
     "id": 101,
     "name": {
-      "english": "Nounmon #101"
+      "english": "Noun #101"
     },
     "type": [
       "Electric"
@@ -1952,7 +1952,7 @@
   {
     "id": 102,
     "name": {
-      "english": "Nounmon #102"
+      "english": "Noun #102"
     },
     "type": [
       "Grass",
@@ -1970,7 +1970,7 @@
   {
     "id": 103,
     "name": {
-      "english": "Nounmon #103"
+      "english": "Noun #103"
     },
     "type": [
       "Grass",
@@ -1988,7 +1988,7 @@
   {
     "id": 104,
     "name": {
-      "english": "Nounmon #104"
+      "english": "Noun #104"
     },
     "type": [
       "Ground"
@@ -2005,7 +2005,7 @@
   {
     "id": 105,
     "name": {
-      "english": "Nounmon #105"
+      "english": "Noun #105"
     },
     "type": [
       "Ground"
@@ -2022,7 +2022,7 @@
   {
     "id": 106,
     "name": {
-      "english": "Nounmon #106"
+      "english": "Noun #106"
     },
     "type": [
       "Fighting"
@@ -2039,7 +2039,7 @@
   {
     "id": 107,
     "name": {
-      "english": "Nounmon #107"
+      "english": "Noun #107"
     },
     "type": [
       "Fighting"
@@ -2056,7 +2056,7 @@
   {
     "id": 108,
     "name": {
-      "english": "Nounmon #108"
+      "english": "Noun #108"
     },
     "type": [
       "Normal"
@@ -2073,7 +2073,7 @@
   {
     "id": 109,
     "name": {
-      "english": "Nounmon #109"
+      "english": "Noun #109"
     },
     "type": [
       "Poison"
@@ -2090,7 +2090,7 @@
   {
     "id": 110,
     "name": {
-      "english": "Nounmon #110"
+      "english": "Noun #110"
     },
     "type": [
       "Poison"
@@ -2107,7 +2107,7 @@
   {
     "id": 111,
     "name": {
-      "english": "Nounmon #111"
+      "english": "Noun #111"
     },
     "type": [
       "Ground",
@@ -2125,7 +2125,7 @@
   {
     "id": 112,
     "name": {
-      "english": "Nounmon #112"
+      "english": "Noun #112"
     },
     "type": [
       "Ground",
@@ -2143,7 +2143,7 @@
   {
     "id": 113,
     "name": {
-      "english": "Nounmon #113"
+      "english": "Noun #113"
     },
     "type": [
       "Normal"
@@ -2160,7 +2160,7 @@
   {
     "id": 114,
     "name": {
-      "english": "Nounmon #114"
+      "english": "Noun #114"
     },
     "type": [
       "Grass"
@@ -2177,7 +2177,7 @@
   {
     "id": 115,
     "name": {
-      "english": "Nounmon #115"
+      "english": "Noun #115"
     },
     "type": [
       "Normal"
@@ -2194,7 +2194,7 @@
   {
     "id": 116,
     "name": {
-      "english": "Nounmon #116"
+      "english": "Noun #116"
     },
     "type": [
       "Water"
@@ -2211,7 +2211,7 @@
   {
     "id": 117,
     "name": {
-      "english": "Nounmon #117"
+      "english": "Noun #117"
     },
     "type": [
       "Water"
@@ -2228,7 +2228,7 @@
   {
     "id": 118,
     "name": {
-      "english": "Nounmon #118"
+      "english": "Noun #118"
     },
     "type": [
       "Water"
@@ -2245,7 +2245,7 @@
   {
     "id": 119,
     "name": {
-      "english": "Nounmon #119"
+      "english": "Noun #119"
     },
     "type": [
       "Water"
@@ -2262,7 +2262,7 @@
   {
     "id": 120,
     "name": {
-      "english": "Nounmon #120"
+      "english": "Noun #120"
     },
     "type": [
       "Water"
@@ -2279,7 +2279,7 @@
   {
     "id": 121,
     "name": {
-      "english": "Nounmon #121"
+      "english": "Noun #121"
     },
     "type": [
       "Water",
@@ -2297,7 +2297,7 @@
   {
     "id": 122,
     "name": {
-      "english": "Nounmon #122"
+      "english": "Noun #122"
     },
     "type": [
       "Psychic",
@@ -2315,7 +2315,7 @@
   {
     "id": 123,
     "name": {
-      "english": "Nounmon #123"
+      "english": "Noun #123"
     },
     "type": [
       "Bug",
@@ -2333,7 +2333,7 @@
   {
     "id": 124,
     "name": {
-      "english": "Nounmon #124"
+      "english": "Noun #124"
     },
     "type": [
       "Ice",
@@ -2351,7 +2351,7 @@
   {
     "id": 125,
     "name": {
-      "english": "Nounmon #125"
+      "english": "Noun #125"
     },
     "type": [
       "Electric"
@@ -2368,7 +2368,7 @@
   {
     "id": 126,
     "name": {
-      "english": "Nounmon #126"
+      "english": "Noun #126"
     },
     "type": [
       "Fire"
@@ -2385,7 +2385,7 @@
   {
     "id": 127,
     "name": {
-      "english": "Nounmon #127"
+      "english": "Noun #127"
     },
     "type": [
       "Bug"
@@ -2402,7 +2402,7 @@
   {
     "id": 128,
     "name": {
-      "english": "Nounmon #128"
+      "english": "Noun #128"
     },
     "type": [
       "Normal"
@@ -2419,7 +2419,7 @@
   {
     "id": 129,
     "name": {
-      "english": "Nounmon #129"
+      "english": "Noun #129"
     },
     "type": [
       "Water"
@@ -2436,7 +2436,7 @@
   {
     "id": 130,
     "name": {
-      "english": "Nounmon #130"
+      "english": "Noun #130"
     },
     "type": [
       "Water",
@@ -2454,7 +2454,7 @@
   {
     "id": 131,
     "name": {
-      "english": "Nounmon #131"
+      "english": "Noun #131"
     },
     "type": [
       "Water",
@@ -2472,7 +2472,7 @@
   {
     "id": 132,
     "name": {
-      "english": "Nounmon #132"
+      "english": "Noun #132"
     },
     "type": [
       "Normal"
@@ -2489,7 +2489,7 @@
   {
     "id": 133,
     "name": {
-      "english": "Nounmon #133"
+      "english": "Noun #133"
     },
     "type": [
       "Normal"
@@ -2506,7 +2506,7 @@
   {
     "id": 134,
     "name": {
-      "english": "Nounmon #134"
+      "english": "Noun #134"
     },
     "type": [
       "Water"
@@ -2523,7 +2523,7 @@
   {
     "id": 135,
     "name": {
-      "english": "Nounmon #135"
+      "english": "Noun #135"
     },
     "type": [
       "Electric"
@@ -2540,7 +2540,7 @@
   {
     "id": 136,
     "name": {
-      "english": "Nounmon #136"
+      "english": "Noun #136"
     },
     "type": [
       "Fire"
@@ -2557,7 +2557,7 @@
   {
     "id": 137,
     "name": {
-      "english": "Nounmon #137"
+      "english": "Noun #137"
     },
     "type": [
       "Normal"
@@ -2574,7 +2574,7 @@
   {
     "id": 138,
     "name": {
-      "english": "Nounmon #138"
+      "english": "Noun #138"
     },
     "type": [
       "Rock",
@@ -2592,7 +2592,7 @@
   {
     "id": 139,
     "name": {
-      "english": "Nounmon #139"
+      "english": "Noun #139"
     },
     "type": [
       "Rock",
@@ -2610,7 +2610,7 @@
   {
     "id": 140,
     "name": {
-      "english": "Nounmon #140"
+      "english": "Noun #140"
     },
     "type": [
       "Rock",
@@ -2628,7 +2628,7 @@
   {
     "id": 141,
     "name": {
-      "english": "Nounmon #141"
+      "english": "Noun #141"
     },
     "type": [
       "Rock",
@@ -2646,7 +2646,7 @@
   {
     "id": 142,
     "name": {
-      "english": "Nounmon #142"
+      "english": "Noun #142"
     },
     "type": [
       "Rock",
@@ -2664,7 +2664,7 @@
   {
     "id": 143,
     "name": {
-      "english": "Nounmon #143"
+      "english": "Noun #143"
     },
     "type": [
       "Normal"
@@ -2681,7 +2681,7 @@
   {
     "id": 144,
     "name": {
-      "english": "Nounmon #144"
+      "english": "Noun #144"
     },
     "type": [
       "Ice",
@@ -2699,7 +2699,7 @@
   {
     "id": 145,
     "name": {
-      "english": "Nounmon #145"
+      "english": "Noun #145"
     },
     "type": [
       "Electric",
@@ -2717,7 +2717,7 @@
   {
     "id": 146,
     "name": {
-      "english": "Nounmon #146"
+      "english": "Noun #146"
     },
     "type": [
       "Fire",
@@ -2735,7 +2735,7 @@
   {
     "id": 147,
     "name": {
-      "english": "Nounmon #147"
+      "english": "Noun #147"
     },
     "type": [
       "Dragon"
@@ -2752,7 +2752,7 @@
   {
     "id": 148,
     "name": {
-      "english": "Nounmon #148"
+      "english": "Noun #148"
     },
     "type": [
       "Dragon"
@@ -2769,7 +2769,7 @@
   {
     "id": 149,
     "name": {
-      "english": "Nounmon #149"
+      "english": "Noun #149"
     },
     "type": [
       "Dragon",
@@ -2787,7 +2787,7 @@
   {
     "id": 150,
     "name": {
-      "english": "Nounmon #150"
+      "english": "Noun #150"
     },
     "type": [
       "Psychic"
@@ -2804,7 +2804,7 @@
   {
     "id": 151,
     "name": {
-      "english": "Nounmon #151"
+      "english": "Noun #151"
     },
     "type": [
       "Psychic"

@@ -12,10 +12,13 @@ import { battleScene } from "./scenes/battleScene";
 import { pokemonScene } from "./scenes/pokemonScene";
 import WorldScene from "./scenes/WorldScene";
 import { io } from "socket.io-client";
+import { useUIStore } from "../../lib/stores/ui";
+import { Loading } from "./ui/components/Loading";
+import { UI } from "./ui/UI";
 
 const GameComponent = () => {
     const [game, setGame] = useState<PhaserGame>();
-
+    const { loading } = useUIStore();
     useEffect(() => {
         setGame(
             new PhaserGame({
@@ -66,6 +69,8 @@ const GameComponent = () => {
 
     return (
         <>
+            {loading && <Loading />}
+            <UI game={game} />
             <div id="game" />
         </>
     );

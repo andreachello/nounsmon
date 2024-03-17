@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 
 import { DynamicWidget } from "@dynamic-labs/sdk-react-core";
 import { useAccount, useConnect, useDisconnect } from "wagmi";
+import { useUserDataStore } from '../lib/stores/userData';
 
 const DynamicComponentWithNoSSR = dynamic(
   () => import('./game/GameComponent'),
@@ -17,6 +18,12 @@ export default function Home() {
   const { connectors, connect, status, error } = useConnect();
   const { disconnect } = useDisconnect();
 
+  useUserDataStore.setState({
+    address: String(account.address)
+  })
+
+
+
   useEffect(() => {
     setLoading(true)
   }, []);
@@ -24,10 +31,17 @@ export default function Home() {
   return (
     <main className=''>
       <div className='absolute flex flex-row justify-end w-full p-4'>
-      <DynamicWidget />
+        <DynamicWidget />
       </div>
-
-      {loading ? <DynamicComponentWithNoSSR /> : null}
+      {account.address ? (
+        <>
+          {loading ? <DynamicComponentWithNoSSR /> : null}
+        </>
+      ) : (
+        <>
+          <img src="assets/images/ui/Slide 16_9 - 1.png" alt="logo" />
+        </>
+      )}
     </main>
   );
 }

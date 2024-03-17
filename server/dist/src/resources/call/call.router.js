@@ -29,6 +29,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const callController = __importStar(require("./call.controller"));
 const callRouter = express_1.default.Router();
-callRouter.get("/", callController.call);
+callRouter.get("/mint", callController.mintNoun);
+callRouter.post("/catch", callController.catchNoun);
+callRouter.get("/svg/:nounId", callController.getNounSVG);
 exports.default = callRouter;
 //# sourceMappingURL=call.router.js.map
